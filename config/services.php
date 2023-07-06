@@ -32,7 +32,7 @@ return [
     ],
 
     'midtrans' => [
-        'merchanID' => env('MIDTRANS_MERCHANT_ID'),
+        'merchantId' => env('MIDTRANS_MERCHANT_ID'),
         'serverKey' => env('MIDTRANS_SERVER_KEY'),
         'clientKey' => env('MIDTRANS_CLIENT_KEY'),
         'isProduction' => env('MIDTRANS_IS_PRODUCTION_KEY'),
