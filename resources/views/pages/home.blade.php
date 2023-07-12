@@ -95,10 +95,10 @@
       <section class="store-new-products">
         <div class="container">
           <div class="row">
-            <div class="col-8" data-aos="fade-up">
+            <div class="col-6 col-md col-lg-8" data-aos="fade-up">
               <h5>Produk Baru</h5>
             </div>
-            <div class="col-4 text-right" data-aos="fade-up">
+            <div class="col-6 col-md col-lg-4 text-right" data-aos="fade-up">
               <a href="{{ route('categories') }}" class="see-all">Semua produk</a>
             </div>
           </div>
@@ -110,6 +110,9 @@
               data-aos-delay="100"
               >
                 <a href="{{ route('details', $product->slug) }}" class="component-products d-block">
+                  @if($product->created_at >= now()->subWeeks(2)) <!-- Tambahkan kondisi ini -->
+                      <p class="badge-product">BARU</p> <!-- Tambahkan elemen dengan teks "BARU" -->
+                  @endif
                   <div class="products-thumbnail">
                     <div
                       class="products-image"
@@ -121,9 +124,9 @@
                       @endif
                       "
                     >
-                    @if($product->created_at >= now()->subWeeks(2)) <!-- Tambahkan kondisi ini -->
+                    {{-- @if($product->created_at >= now()->subWeeks(2)) <!-- Tambahkan kondisi ini -->
                         <p class="badge-product">BARU</p> <!-- Tambahkan elemen dengan teks "BARU" -->
-                    @endif
+                    @endif --}}
                     </div>
                   </div>
                   <div class="products-text">{{ $product->name }}</div>

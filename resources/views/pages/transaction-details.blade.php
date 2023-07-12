@@ -44,7 +44,7 @@
                             <img
                               src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
                               alt=""
-                              class="w-100 mb-3"
+                              class="w-100 mb-3 product-image"
                             />
                           </div>
                           <div class="col-12 col-md-8">

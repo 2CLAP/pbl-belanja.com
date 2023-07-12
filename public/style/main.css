@@ -9298,7 +9298,7 @@ footer p {
 
 .page-details .store-gallery .row-scroll {
   width: 100%;
-  height: 500px;
+  max-height: 500px;
   overflow-y: auto;
 }
 @media (max-width: 991.98px) {
@@ -9706,6 +9706,18 @@ div.page-transaction {
   line-height: 12px;
   color: #9191a9;
 }
+.page-transaction .transaction-content .product-thumbnail {
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.page-transaction .transaction-content .product-image {
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
 .page-transaction .transaction-content .product-title {
   font-weight: 400;
   font-size: 16px;
@@ -9787,7 +9799,7 @@ div.page-transaction {
 }
 @media (max-width: 767.98px) {
   .component-categories .categories-thumbnail .categories-text {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 @media (max-width: 991.98px) {
@@ -9797,7 +9809,7 @@ div.page-transaction {
 }
 @media (max-width: 767.98px) {
   .component-categories .categories-thumbnail .categories-text {
-    padding-left: 80px;
+    padding-left: 45px;
   }
 }
 
@@ -9807,28 +9819,45 @@ div.page-transaction {
 .component-products:hover {
   text-decoration: none;
 }
+.component-products .badge-product {
+  left: 74%;
+  top: 6%;
+  font-size: 10px;
+  padding: 3px 10px;
+  background-color: #496dc8;
+  color: white;
+  border: 1px solid #496dc8;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
+}
+@media (max-width: 1199.98px) {
+  .component-products .badge-product {
+    left: 70%;
+    top: 6%;
+  }
+}
+@media (max-width: 991.98px) {
+  .component-products .badge-product {
+    left: 68%;
+    top: 6%;
+  }
+}
+@media (max-width: 767.98px) {
+  .component-products .badge-product {
+    left: 60%;
+    top: 6%;
+  }
+}
 .component-products .products-thumbnail {
   width: 100%;
   height: 150px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  z-index: 1;
 }
 .component-products .products-thumbnail:hover .products-image, .component-products .products-thumbnail:focus .products-image {
   transform: scale(1.03);
-}
-.component-products .products-thumbnail .badge-product {
-  float: right;
-  margin-right: 10px;
-  margin-top: 10px;
-  padding: 3px 10px;
-  font-size: 10px;
-  display: block;
-  background-color: #496dc8;
-  color: white;
-  border: 1px solid #496dc8;
-  border-radius: 20px;
 }
 .component-products .products-thumbnail .products-image {
   width: 100%;

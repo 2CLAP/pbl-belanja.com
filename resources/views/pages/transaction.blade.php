@@ -63,7 +63,7 @@
                                     <img
                                     src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
                                     alt=""
-                                    class="w-75"
+                                    class="w-75 product-thumbnail"
                                     />
                                 </div>
                                 <div class="col-md-2 col-lg-4 mt-3 mt-sm-3 mt-md-0 mt-lg-0">{{ $transaction->product->name }}</div>
@@ -101,7 +101,7 @@
                                     <img
                                     src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
                                     alt=""
-                                    class="w-75"
+                                    class="w-75 product-thumbnail"
                                     />
                                 </div>
                                 <div class="col-md-2 col-lg-4 mt-3 mt-sm-3 mt-md-0 mt-lg-0">{{ $transaction->product->name }}</div>

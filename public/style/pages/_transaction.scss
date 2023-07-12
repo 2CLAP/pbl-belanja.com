@@ -27,6 +27,18 @@ div.page-transaction {
     }
 
     .transaction-content {
+        .product-thumbnail {
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-image {
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
         .product-title {
             font-weight: 400;
             font-size: 16px;
