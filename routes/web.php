@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 Route::prefix('admin')
-    ->middleware(['auth','admin']) // Comment atau non-aktifkan query ini agar bisa mengakses pembuatan akun admin
+    ->middleware(['auth','admin'])
     ->group(function() {
         Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
         Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
