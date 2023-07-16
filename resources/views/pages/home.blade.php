@@ -109,10 +109,16 @@
               data-aos="fade-up"
               data-aos-delay="100"
               >
+                @if($product->tag->name == "PRODUK BARU")
+                    <p class="badge-product-new">BARU</p>
+                @endif
+                @if($product->tag->name == "KOSONG")
+                    <p class="badge-product-sold">HABIS</p>
+                @endif
+                @if($product->tag->name == "TERLARIS")
+                    <p class="badge-product-pop">TERLARIS</p>
+                @endif
                 <a href="{{ route('details', $product->slug) }}" class="component-products d-block">
-                  @if($product->created_at >= now()->subWeeks(2)) <!-- Tambahkan kondisi ini -->
-                      <p class="badge-product">BARU</p> <!-- Tambahkan elemen dengan teks "BARU" -->
-                  @endif
                   <div class="products-thumbnail">
                     <div
                       class="products-image"

@@ -67,7 +67,16 @@
               data-aos="fade-up"
               data-aos-delay="100"
               >
-                <a href="{{ route('details', $product->slug) }}" class="component-products d-block">
+                <a href="{{ route('details', $product->slug) }}" class="component-products d-block">                    
+                  @if($product->tag->name == "PRODUK BARU")
+                      <p class="badge-product-new">BARU</p>
+                  @endif
+                  @if($product->tag->name == "KOSONG")
+                      <p class="badge-product-sold">HABIS</p>
+                  @endif
+                  @if($product->tag->name == "TERLARIS")
+                      <p class="badge-product-pop">TERLARIS</p>
+                  @endif
                   <div class="products-thumbnail">
                     <div
                       class="products-image"
@@ -79,9 +88,6 @@
                       @endif
                       "
                     >
-                    @if($product->created_at >= now()->subWeeks(2)) <!-- Tambahkan kondisi ini -->
-                        <p class="badge-product">BARU</p> <!-- Tambahkan elemen dengan teks "BARU" -->
-                    @endif
                   </div>
                   </div>
                   <div class="products-text">{{ $product->name }}</div>

@@ -46,13 +46,23 @@
                   @forelse  ($carts as $cart)
                     <tr>
                       <td style="width: 15%;">
-                        @if ($cart->product->galleries)
+                        @if ($cart->product->galleries->count())
                           <a href="{{ route('details', $cart->product->slug) }}" class="d-block">
                             {{-- <img src="{{ Storage::url($cart->product->galleries->first()->photos) }}" alt="" class="cart-image w-100">  --}}
                             <div class="cart-thumbnail">
                               <div
                                 class="cart-image"
                                 style="background-image: url({{ Storage::url($cart->product->galleries->first()->photos) }})"
+                              ></div>
+                            </div>
+                          </a>
+                        @else
+                          <a href="{{ route('details', $cart->product->slug) }}" class="d-block">
+                            {{-- <img src="{{ Storage::url($cart->product->galleries->first()->photos) }}" alt="" class="cart-image w-100">  --}}
+                            <div class="cart-thumbnail">
+                              <div
+                                class="cart-image"
+                                style="background-color: #eee"
                               ></div>
                             </div>
                           </a>

@@ -37,11 +37,11 @@ class Product extends Model
        return $this->belongsTo(Tag::class, 'tags_id', 'id');
     }
 
-    public function getDiscountPrice() {
-        if ($this->tags) {
-            return $this->tags->discount_price;
-        }
+    // public function getDiscountPrice() {
+    //     if ($this->tags) {
+    //         return $this->tags->discount_price;
+    //     }
         
-        return $this->price;
-    }
+    //     return $this->price;
+    // }
 }
