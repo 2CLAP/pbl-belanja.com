@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::take(3)->get(); // Mengambil data categories dari model untuk ditampilkan pada view home. Hanya mengambil 3 categories awal
-        $products = Product::with(['galleries'])->take(8)->latest()->get(); // Mengambil data products dari model untuk ditampilkan pada view home. Hanya mengambil 8 products paling baru
+        $products = Product::with(['galleries','tag'])->take(8)->latest()->get(); // Mengambil data products dari model untuk ditampilkan pada view home. Hanya mengambil 8 products paling baru
         return view('pages.home', [
             'categories' => $categories,
             'products' => $products,
