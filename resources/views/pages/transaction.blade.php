@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="col-md-2 col-lg-4 mt-3 mt-sm-3 mt-md-0 mt-lg-0">{{ $transaction->product->name }}</div>
                                 <div class="col-md-2 col-lg-2">{{ $transaction->shipping_status }}</div>
-                                <div class="col-md-5 col-lg-3">{{ $transaction->created_at }}</div>
+                                <div class="col-md-5 col-lg-3">{{ $transaction->transaction->code }}</div>
                                 <div class="col-lg-1 d-none d-md-none d-lg-block">
                                     <img src="/images/arrow_to_right.svg" alt="" />
                                 </div>
@@ -97,16 +97,16 @@
                             >
                             <div class="card-body">
                                 <div class="row d-flex align-items-center">
-                                <div class="col-sm col-md-3 col-lg-2">
+                                <div class="col-4 col-sm-4 col-md-3 col-lg-2">
                                     <img
                                     src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
                                     alt=""
                                     class="w-75 product-thumbnail"
                                     />
                                 </div>
-                                <div class="col-md-2 col-lg-4 mt-3 mt-sm-3 mt-md-0 mt-lg-0">{{ $transaction->product->name }}</div>
-                                <div class="col-md-2 col-lg-2">{{ $transaction->shipping_status }}</div>
-                                <div class="col-md-5 col-lg-3">{{ $transaction->created_at }}</div>
+                                <div class="col-4 col-sm-4 col-md-2 col-lg-4">{{ $transaction->product->name }}</div>
+                                <div class="col-4 col-sm-4 col-md-3 col-lg-2">{{ $transaction->shipping_status }}</div>
+                                <div class="d-none d-sm-none d-md-block col-md-3 col-lg-3">{{ $transaction->transaction->code }}</div>
                                 <div class="col-lg-1 d-none d-md-none d-lg-block">
                                     <img src="/images/arrow_to_right.svg" alt="" />
                                 </div>

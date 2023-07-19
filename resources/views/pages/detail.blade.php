@@ -84,9 +84,15 @@
                 @auth
                   <form action="{{ route('detail-add', $product->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <button type="submit" class="btn btn-success px-4 text-white btn-block mb-3">
-                      Tambah ke Troli
-                    </button>
+                    @if ($product->stock == 0)
+                      <button type="submit" class="btn btn-secondary px-4 text-white btn-block mb-3" disabled>
+                        Barang Habis
+                      </button>  
+                    @else
+                      <button type="submit" class="btn btn-success px-4 text-white btn-block mb-3">
+                        Tambah ke Troli
+                      </button>
+                    @endif
                   </form>
                 @else
                   <a href="{{ route('login') }}" class="btn btn-success px-4 text-white btn-block mb-3">
@@ -96,7 +102,7 @@
                   <div class="stock text-center">
                     @if ($product->stock >= 6)
                         <p class="text-secondary">Stok Tersedia</p>
-                    @elseif ($product->stock >= 2)
+                    @elseif ($product->stock >= 1)
                         <p class="text-danger">{{ $product->stock }} stok tersisa</p>
                     @else
                         <p class="text-danger">Barang habis</p>

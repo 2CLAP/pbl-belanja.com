@@ -32,7 +32,7 @@
             </section>
             <div class="container">
               <div class="transaction-heading">
-                <h2 class="transaction-title">{{ $transaction->code }}</h2>
+                <h2 class="transaction-title">KODE: {{ $transaction->transaction->code }}</h2>
               </div>
               <div class="transaction-content" id="transactionDetails">
                 <div class="row">
@@ -78,8 +78,8 @@
                                 @endif
                               </div>
                               <div class="col-12 col-md-6">
-                                <div class="product-title">Total Belanja</div>
-                                <div class="product-subtitle">{{ number_format($transaction->transaction->total_price) }}</div>
+                                <div class="product-title">Harga Barang</div>
+                                <div class="product-subtitle">{{ number_format($transaction->product->price) }}</div>
                               </div>
                               <div class="col-12 col-md-6">
                                 <div class="product-title">Nomor Telpon</div>
