@@ -28,7 +28,7 @@
                 <div class="carousel-inner border-radius">
                   <div class="carousel-item active">
                     <img
-                      src="/images/crsl1.jpg"
+                      src="/images/crsl5.jpg"
                       alt="Carousel Image"
                       class="d-block w-100"
                     />
